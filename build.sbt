@@ -11,5 +11,5 @@ lazy val commonSettings = Seq(
 lazy val `kata_2018-12-number-scanner` = (project in file("kata_2018-12-number-scanner"))
   .settings(commonSettings)
 
-lazy val `kata_2019-1-fizz-fuzz-boom` = (project in file("kata_2019-01-fizz-fuzz-boom"))
+lazy val `kata_2019-01-fizz-fuzz-boom` = (project in file("kata_2019-01-fizz-fuzz-boom"))
   .settings(commonSettings)
