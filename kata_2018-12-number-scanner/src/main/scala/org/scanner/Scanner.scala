@@ -4,11 +4,9 @@ import scala.io.Source
 import scala.util.{ Failure, Success, Try }
 
 class Scanner {
-  def read(filename: String): String = {
-    val lines       = readFile(filename)
-    val numberParts = lines.map(content => constructAllNumberString(content))
-    val result      = numberParts.map(item => translate(item))
-    result.get
+  def read(filename: String): Option[String] = {
+    val lines = readFile(filename)
+    lines.map(content => constructAllNumberString(content)).map(item => translate(item))
   }
 
   def readFile(filename: String): Option[Seq[String]] = {
