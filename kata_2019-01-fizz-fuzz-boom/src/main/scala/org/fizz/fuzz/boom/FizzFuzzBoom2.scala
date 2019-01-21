@@ -9,7 +9,7 @@ class FizzFuzzBoom2(max: Int) {
   val g: Int => Boolean = (x: Int) => x % 5 == 0
   val h: Int => Boolean = (x: Int) => x % 3 == 0 && x % 5 == 0
 
-  def run() = {
+  def run(): Unit = {
 
     val divisors = HashMap(h -> "boom", f -> "fizz", g -> "fuzz")
 

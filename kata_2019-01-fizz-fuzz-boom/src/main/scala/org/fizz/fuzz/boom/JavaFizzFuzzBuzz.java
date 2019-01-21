@@ -14,7 +14,7 @@ public class JavaFizzFuzzBuzz {
     private final Map<Function<Integer, Boolean>, String> divisors;
     private final Integer max;
 
-    JavaFizzFuzzBuzz(Integer max) {
+    private JavaFizzFuzzBuzz(Integer max) {
         this.max = max;
 
         divisors = new LinkedHashMap<>();
