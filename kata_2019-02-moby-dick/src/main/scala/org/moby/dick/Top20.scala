@@ -27,7 +27,7 @@ object Top20 {
   def allLines(filename: String): List[String] =
     readFile(filename) match {
       case Success(lines) => allWords(lines)
-      case Failure(exception) => throw new RuntimeException(s"Filename '$filename' not found or broke. Cause: $exception")
+      case Failure(exception) => throw new RuntimeException(s"Filename '$filename' not found or broken. Cause: $exception")
     }
 
   def readFile(filename: String) =
