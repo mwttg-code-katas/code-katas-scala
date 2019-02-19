@@ -5,6 +5,7 @@ import scala.util.{ Failure, Success, Try }
 
 object Top21 {
   private val pattern = "(\\.|,|'|\\?|\\!|\\s+)"
+  
   def get(filename: String): ListMap[String, Int] =
     Try(Source.fromResource(filename).getLines().toList) match {
       case Success(lines) =>
