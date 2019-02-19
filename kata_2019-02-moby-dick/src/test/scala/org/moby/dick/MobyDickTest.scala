@@ -12,7 +12,7 @@ class MobyDickTest extends WordSpec with Matchers {
         "This is a THIRD line."
       )
 
-      val actual = MobyDick.allWords(words)
+      val actual = Top20.allWords(words)
       actual should contain theSameElementsAs List(
         "line",
         "third",
@@ -45,7 +45,7 @@ class MobyDickTest extends WordSpec with Matchers {
 
     "readFile - read a text file" in {
       val filename = "test-lines.txt"
-      val actual   = MobyDick.readFile(filename)
+      val actual   = Top20.readFile(filename)
       actual.get should contain theSameElementsAs List(
         "3. line",
         "1. line",
@@ -53,7 +53,7 @@ class MobyDickTest extends WordSpec with Matchers {
       )
     }
     "readFile - throw an exception for unknown filename" in {
-      an[RuntimeException] should be thrownBy MobyDick.readFile("filename is unknown").get
+      an[RuntimeException] should be thrownBy Top20.readFile("filename is unknown").get
     }
 
   }
