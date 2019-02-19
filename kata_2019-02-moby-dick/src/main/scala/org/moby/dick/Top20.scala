@@ -6,7 +6,9 @@ import scala.io.Source
 import scala.util.{ Failure, Success, Try }
 
 object Top20 {
-  def get(filename: String) = {
+  private val pattern = "(\\.|,|'|\\?|\\!|\\s+)"
+
+  def get(filename: String): ListMap[String, Int] = {
     val lines       = allLines(filename)
     val words       = allWords(lines)
     val table       = createTable(words)
@@ -20,7 +22,7 @@ object Top20 {
     words.groupBy(identity).mapValues(_.size)
 
   def allWords(lines: List[String]): List[String] =
-    lines.flatMap(_.split("(\\.|,|'|\\?|\\!|\\s+)").filterNot(word => word == "").map(word => word.toLowerCase).toList)
+    lines.flatMap(_.split(pattern).filterNot(word => word == "").map(word => word.toLowerCase).toList)
 
   def allLines(filename: String): List[String] =
     readFile(filename) match {
