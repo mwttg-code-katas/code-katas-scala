@@ -1,4 +1,3 @@
-// javish
 package org.moby.dick
 
 import scala.collection.immutable.ListMap
