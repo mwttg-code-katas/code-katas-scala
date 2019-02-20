@@ -17,8 +17,7 @@ object Top20 {
 
   def sortTable(table: Map[String, Int]): ListMap[String, Int] = ListMap(table.toSeq.sortWith(_._2 > _._2): _*)
 
-  def createTable(words: List[String]): Map[String, Int] =
-    words.groupBy(identity).mapValues(_.size)
+  def createTable(words: List[String]): Map[String, Int] = words.groupBy(identity).mapValues(_.size)
 
   def allWords(lines: List[String]): List[String] =
     lines.flatMap(_.split(pattern).filterNot(word => word == "").map(word => word.toLowerCase).toList)
@@ -29,6 +28,5 @@ object Top20 {
       case Failure(exception) => throw new RuntimeException(s"Filename '$filename' not found or broken. Cause: $exception")
     }
 
-  def readFile(filename: String) =
-    Try(Source.fromResource(filename).getLines().toList)
+  def readFile(filename: String) = Try(Source.fromResource(filename).getLines().toList)
 }
