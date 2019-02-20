@@ -1,9 +1,27 @@
 package org.moby.dick
 import org.scalatest.{ Matchers, WordSpec }
 
-class MobyDickTest extends WordSpec with Matchers {
+class Top20Test extends WordSpec with Matchers {
 
   "MobyDickTest" should {
+
+    "sortTable" in {
+    val input = Map(
+      "hello" -> 3,
+      "world" -> 10,
+      "me" -> 5,
+      "test" -> 2,
+      "input" -> 6
+    )
+    val actual = Top20.sortTable(input)
+    // not sure how to test the order, yet
+  }
+
+    "createTable" in {
+      val words = List("hello", "hello", "world", "hello")
+      val actual = Top20.createTable(words)
+      actual shouldBe Map("world"-> 1, "hello" -> 3)
+    }
 
     "allWords" in {
       val words = List(
@@ -43,10 +61,10 @@ class MobyDickTest extends WordSpec with Matchers {
       )
     }
 
-    "readFile - read a text file" in {
+    "allLines" in {
       val filename = "test-lines.txt"
-      val actual   = Top20.readFile(filename)
-      actual.get should contain theSameElementsAs List(
+      val actual   = Top20.allLines(filename)
+      actual should contain theSameElementsAs List(
         "3. line",
         "1. line",
         "This is a second line. It's a nice line, because it has some funny stuff."
