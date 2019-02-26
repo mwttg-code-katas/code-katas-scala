@@ -16,3 +16,6 @@ lazy val `kata_2019-01-fizz-fuzz-boom` = (project in file("kata_2019-01-fizz-fuz
 
 lazy val `kata_2019-02-moby-dick` = (project in file("kata_2019-02-moby-dick"))
     .settings(commonSettings)
+
+lazy val `kata_2019-03-berlin-clock` = (project in file("kata_2019-03-berlin-clock"))
+    .settings(commonSettings)
