@@ -107,7 +107,7 @@ class ScannerTest extends WordSpec with Matchers {
     "transform a whole file" should {
       "return the correct result" in {
         val filename = "code.txt"
-        val actual = Scanner().read(filename)
+        val actual   = Scanner().read(filename)
         actual shouldBe Option("123456789")
       }
     }

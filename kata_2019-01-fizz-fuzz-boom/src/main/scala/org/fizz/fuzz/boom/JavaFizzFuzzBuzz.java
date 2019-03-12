@@ -6,14 +6,8 @@ import java.util.Map;
 import java.util.function.Function;
 
 public class JavaFizzFuzzBuzz {
-    public static void main(String[] args) {
-        final JavaFizzFuzzBuzz app = new JavaFizzFuzzBuzz(100);
-        app.run();
-    }
-
     private final Map<Function<Integer, Boolean>, String> divisors;
     private final Integer max;
-
     private JavaFizzFuzzBuzz(Integer max) {
         this.max = max;
 
@@ -23,6 +17,10 @@ public class JavaFizzFuzzBuzz {
         divisors.put(mod5(), "fuzz");
     }
 
+    public static void main(String[] args) {
+        final JavaFizzFuzzBuzz app = new JavaFizzFuzzBuzz(100);
+        app.run();
+    }
 
     private void run() {
         for (int i = 1; i < max; i++) {

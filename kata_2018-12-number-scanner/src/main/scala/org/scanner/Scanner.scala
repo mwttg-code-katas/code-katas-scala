@@ -24,6 +24,13 @@ class Scanner {
     (0 until size).map(position => constructNumberString(lines, position))
   }
 
+  def numbersInFile(line: String): Int = line.length / 3
+
+  def constructNumberString(lines: Seq[String], position: Int): String = {
+    val parts = lines.map(line => line.substring(position * 3, position * 3 + 3))
+    parts.mkString
+  }
+
   def translate(numberStrings: Seq[String]): String =
     numberStrings.map {
       case "     |  |" => "1"
@@ -36,13 +43,6 @@ class Scanner {
       case " _ |_||_|" => "8"
       case " _ |_| _|" => "9"
     }.mkString
-
-  def numbersInFile(line: String): Int = line.length / 3
-
-  def constructNumberString(lines: Seq[String], position: Int): String = {
-    val parts = lines.map(line => line.substring(position * 3, position * 3 + 3))
-    parts.mkString
-  }
 }
 
 object Scanner {
