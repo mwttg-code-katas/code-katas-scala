@@ -41,7 +41,7 @@ class BerlinClockTest extends WordSpec with Matchers {
     "generate the minute lamps - 00:34:00" in {
       val time   = Time(0, 34, 0)
       val actual = BerlinClock.getMinute(time, MaxMinuteSegments)
-      actual shouldBe "YYYYYYOOOOO\nYYYY"
+      actual shouldBe "YYRYYROOOOO\nYYYY"
     }
     "alternating 2" in {
       val input  = "YYYYYYYYYYO"
