@@ -7,26 +7,26 @@ class Top20Test extends WordSpec with Matchers {
   "MobyDickTest" should {
 
     "sortTable" in {
-    val input = Map(
-      "hello" -> 3,
-      "world" -> 10,
-      "me" -> 5,
-      "test" -> 2,
-      "input" -> 6
-    )
-    val actual = Top20.sortTable(input)
-    // not sure how to test the order, yet
-  }
+      val input = Map(
+        "hello" -> 3,
+        "world" -> 10,
+        "me" -> 5,
+        "test" -> 2,
+        "input" -> 6
+      )
+      val actual = Top20.sortTable(input)
+      // not sure how to test the order, yet
+    }
 
     "createTable" in {
-      val words = List("hello", "hello", "world", "hello")
+      val words  = List("hello", "hello", "world", "hello")
       val actual = Top20.createTable(words)
-      actual shouldBe Map("world"-> 1, "hello" -> 3)
+      actual shouldBe Map("world" -> 1, "hello" -> 3)
     }
 
     "allWords" in {
       val words = List(
-        "Is  this the FIRST line? Yes.",
+        "Is this the FIRST line? Yes.",
         "This is the SECOND line! It's a funny line, because it has some extra stuff...",
         "This is a THIRD line."
       )
@@ -47,7 +47,8 @@ class Top20Test extends WordSpec with Matchers {
         "line",
         "funny",
         "a",
-        "it's",
+        "s",
+        "it",
         "line",
         "second",
         "the",
@@ -59,16 +60,6 @@ class Top20Test extends WordSpec with Matchers {
         "the",
         "this",
         "is"
-      )
-    }
-
-    "allLines" in {
-      val filename = "test-lines.txt"
-      val actual   = Top20.allLines(filename)
-      actual should contain theSameElementsAs List(
-        "3. line",
-        "1. line",
-        "This is a second line. It's a nice line, because it has some funny stuff."
       )
     }
     "readFile - throw an exception for unknown filename" in {
