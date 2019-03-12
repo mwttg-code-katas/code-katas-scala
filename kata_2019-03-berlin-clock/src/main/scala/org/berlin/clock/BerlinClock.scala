@@ -1,4 +1,5 @@
 package org.berlin.clock
+
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -81,13 +82,13 @@ object BerlinClock {
       result._1,
       maxSegments.maxFirstRow,
       light,
-      replaceLamps = false
+      replaceLamps
     )
     val secondRow = generateRow(
       result._2,
       maxSegments.maxSecondRow,
       light,
-      replaceLamps
+      replaceLamps = false
     )
 
     firstRow + "\n" + secondRow

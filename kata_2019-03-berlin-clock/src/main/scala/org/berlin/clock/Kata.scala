@@ -4,8 +4,12 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 object Kata extends App {
-  val now     = LocalDateTime.now()
   val pattern = DateTimeFormatter.ofPattern("HH:mm:ss")
-  val time    = BerlinClock.getTime(now)
-  println(time)
+
+  do {
+    val now = LocalDateTime.now()
+    println(s"--------${now.format(pattern)}---------------")
+    println(BerlinClock.getTime(now))
+    Thread.sleep(1000L)
+  } while (true)
 }
