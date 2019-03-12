@@ -1,4 +1,5 @@
 package org.moby.dick
+
 import org.scalatest.{ Matchers, WordSpec }
 
 class Top20Test extends WordSpec with Matchers {

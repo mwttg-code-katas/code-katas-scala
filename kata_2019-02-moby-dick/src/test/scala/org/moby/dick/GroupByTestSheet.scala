@@ -1,4 +1,5 @@
 package org.moby.dick
+
 import org.scalatest.{ Matchers, WordSpec }
 
 class GroupByTestSheet extends WordSpec with Matchers {
