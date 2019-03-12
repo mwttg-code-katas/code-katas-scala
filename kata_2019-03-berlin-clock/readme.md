@@ -68,3 +68,4 @@ Result
 
 ## Links:
 * http://www.surveyor.in-berlin.de/berlin/uhr/indexe.html
+* Source: https://gist.github.com/jimweirich/2409983
