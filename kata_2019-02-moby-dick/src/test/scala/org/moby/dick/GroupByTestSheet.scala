@@ -7,7 +7,7 @@ class GroupByTestSheet extends WordSpec with Matchers {
     "group the elements by 'identity'" in {
       val input  = List("a", "aa", "a", "b", "c")
       val actual = input.groupBy(identity)
-      println(actual)
+//      println(actual)
       actual shouldBe Map(
         "c" -> List("c"),
         "b" -> List("b"),
@@ -18,7 +18,7 @@ class GroupByTestSheet extends WordSpec with Matchers {
     "groupBy 'identity' should be the same like 'x => x'" in {
       val input  = List("a", "aa", "a", "b", "c")
       val actual = input.groupBy(x => x)
-      println(actual)
+//      println(actual)
       actual shouldBe Map(
         "c" -> List("c"),
         "b" -> List("b"),
@@ -29,7 +29,7 @@ class GroupByTestSheet extends WordSpec with Matchers {
     "#mapValues" in {
       val input  = List("a", "aa", "a", "b", "c")
       val actual = input.groupBy(identity).mapValues(x => x.size)
-      println(actual)
+//      println(actual)
       actual shouldBe Map(
         "c" -> 1,
         "b" -> 1,
