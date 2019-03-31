@@ -11,13 +11,13 @@ object BerlinClock {
 
   private val HourFunc: Int => (Int, Int) = hour => {
     val firstRow  = hour / 5
-    val secondRow = hour - (firstRow * 5)
+    val secondRow = hour % 5
     (firstRow, secondRow)
   }
 
   private[clock] val MinuteFunc: Int => (Int, Int) = minute => {
     val firstRow  = minute / 5
-    val secondRow = minute - (firstRow * 5)
+    val secondRow = minute % 5
     (firstRow, secondRow)
   }
 
@@ -120,6 +120,8 @@ object BerlinClock {
 //    }
 //  }
 
+
+  // Alternative: List with partition
   private[clock] def replace(lamps: String): String =
     lamps.zipWithIndex.map {
       case (character, index) =>
