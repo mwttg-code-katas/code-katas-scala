@@ -5,3 +5,4 @@ This repository is a collection of some code-katas solved with Scala. The collec
 * [Fizz-Fuzz-Boom](kata_2019-01-fizz-fuzz-boom/readme.md)
 * [Moby Dick](kata_2019-02-moby-dick/readme.md)
 * [Berlin Clock](kata_2019-03-berlin-clock/readme.md)
+* [Word Puzzle](kata_2019-04-word-puzzle/readme.md)

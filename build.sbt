@@ -15,7 +15,10 @@ lazy val `kata_2019-01-fizz-fuzz-boom` = (project in file("kata_2019-01-fizz-fuz
   .settings(commonSettings)
 
 lazy val `kata_2019-02-moby-dick` = (project in file("kata_2019-02-moby-dick"))
-    .settings(commonSettings)
+  .settings(commonSettings)
 
 lazy val `kata_2019-03-berlin-clock` = (project in file("kata_2019-03-berlin-clock"))
-    .settings(commonSettings)
+  .settings(commonSettings)
+
+lazy val `kata_2019-04-word-puzzle` = (project in file("kata_2019-04-word-puzzle"))
+  .settings(commonSettings)
