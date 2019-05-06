@@ -1,22 +1,22 @@
 package org.word.puzzle.task3
 
 import scala.io.Source
-import scala.util.{ Failure, Success, Try }
+import scala.util.{Failure, Success, Try}
 
 object WordList {
   def getAnagrams(wordList: List[String]): Map[String, Set[String]] = {
-    var result = Map.empty[String, Set[String]]
-    for (word <- wordList) {
-      val key = word.toLowerCase.sorted
-      if (result.keySet.contains(key)) {
-        val anagrams = result(key) + word
-        result = result + (key -> anagrams)
+    wordList.foldLeft(Map.empty[String, Set[String]]) {
+      (dict, word) => {
 
-      } else {
-        result = result + (key -> Set(word))
+        val wordSorted = word.toLowerCase.sorted
+        if (dict.keySet.contains(wordSorted)) {
+          val newValues = dict(wordSorted) + word
+          dict + (wordSorted -> newValues)
+        } else {
+          dict + (wordSorted -> Set(word))
+        }
       }
     }
-    result
   }
 
   def readFile(filename: String): Option[List[String]] = {
@@ -28,7 +28,4 @@ object WordList {
         Option.empty
     }
   }
-
-  // TODO using var in #getAnagrams seems not to be the 'right' functional way
-  // a better approach would be nice (perhaps something with fold to extend the map?)
 }
