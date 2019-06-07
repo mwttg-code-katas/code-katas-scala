@@ -16,3 +16,6 @@ convert the `ID`, produced by the hand-scanner, to a number.
 The output should look like:
 
     123456789
+
+## Source
+http://codingdojo.org/kata/BankOCR/#problem-description
