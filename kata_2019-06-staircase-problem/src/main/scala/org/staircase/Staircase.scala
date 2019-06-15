@@ -1,0 +1,44 @@
+package org.staircase
+
+import org.staircase.Factorial.factorial
+
+import scala.annotation.tailrec
+
+object Staircase {
+  def combinations: (Int, Int) => Int =
+    (amountOfNumberOne, amountOfNumberTwo) =>
+      factorial(amountOfNumberOne + amountOfNumberTwo) / (factorial(amountOfNumberOne) * factorial(amountOfNumberTwo))
+
+  def numWays(steps: Int): Int = {
+    @tailrec
+    def helper(amountOfNumberOne: Int, amountOfNumberTwo: Int, accumulator: Int): Int =
+      (amountOfNumberOne, amountOfNumberTwo) match {
+        case (_, i) if i < 0 => accumulator
+        case (n, m) =>
+          val possibilities = combinations(n, m)
+          helper(n + 2, m - 1, accumulator + possibilities)
+      }
+
+    helper(steps - (steps / 2 * 2), steps / 2, 0)
+  }
+
+  def numWaysWithWays(steps: Int): (Int, Iterator[List[Int]]) = {
+    @tailrec
+    def helper(amountOfNumberOne: Int,
+               amountOfNumberTwo: Int,
+               accumulator: (Int, Iterator[List[Int]])): (Int, Iterator[List[Int]]) =
+      (amountOfNumberOne, amountOfNumberTwo) match {
+        case (_, i) if i < 0 => accumulator
+        case (n, m) =>
+          val possibilities = combinations(n, m)
+          val ways          = (List.fill(n)(1) ::: List.fill(m)(2)).permutations
+          helper(
+            n + 2,
+            m - 1,
+            (accumulator._1 + possibilities, accumulator._2 ++ ways)
+          )
+      }
+
+    helper(steps - (steps / 2 * 2), steps / 2, (0, Iterator.empty))
+  }
+}

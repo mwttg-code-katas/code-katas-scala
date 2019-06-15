@@ -25,3 +25,6 @@ lazy val `kata_2019-04-word-puzzle` = (project in file("kata_2019-04-word-puzzle
 
 lazy val `kata_2019-05-landing-rover` = (project in file("kata_2019-05-landing-rover"))
   .settings(commonSettings)
+
+lazy val `kata_2019-06-staircase-problem` = (project in file("kata_2019-06-staircase-problem"))
+  .settings(commonSettings)
