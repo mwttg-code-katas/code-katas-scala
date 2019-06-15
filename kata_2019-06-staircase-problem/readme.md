@@ -14,6 +14,8 @@ There are exactly two ways to go up this staircase:
 
 [Hint](hint-task1.md)
 
+[Explanation of the approach](explanation.md)
+
 ## Task 2
 Write a function `num_way(stairs: Int, allowedSteps: List[Int])`.
 Like in Task 1 the function should return the number of ways one can go up a staircase, but this time the number of steps one can take is a parameter of the function.
