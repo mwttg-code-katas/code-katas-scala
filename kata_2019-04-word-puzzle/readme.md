@@ -38,5 +38,5 @@ Measure the time your program needs to create the result.
 ## Stuff
 * [palindrome sentences in german](https://www.wort-suchen.de/wortlisten/palindrom-saetze)
 
-##Source
+## Source
 http://codekata.com/kata/kata06-anagrams/

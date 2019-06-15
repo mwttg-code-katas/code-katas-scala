@@ -1,6 +1,6 @@
 # Landing Rover
 
-##Description
+## Description
 You're part of an exploration team. 
 Your team is sending Landing Rovers on planets.
 These Landing Rovers are remotely controlled vehicles used to explore the surface of the planet. 
@@ -11,7 +11,7 @@ The Landing Rover excepts the following commands:
   * TL - Turn Left by 90°
   * TR - Turn Right by 90°
 
-##Requirements
+## Requirements
 * The commands are given by a text file (one command per line), e.g.
 ```
 MF
@@ -42,14 +42,14 @@ xxxx......
 > * if the Landing Rover encounters an obstacle, it does not move any further. 
 Instead it aborts the command-sequence and reports the obstacle.
 
-##Task
+## Task
 * You are given a starting point (x, y) and a direction (N, S, W, E).
 * You are given the planet as a text file.
 * You are given a collection of commands as a text file.
 * You should drive the Landing Rover on the planet. :smirk:
 * You have to return the finish position and direction or the report of an obstacle (with current stop position and direction).
 
-##Bonus-Task
+## Bonus-Task
 Create a text file, where you visualize the path of the Landing Rover for a given planet with given command-list.
 
 ##Source
