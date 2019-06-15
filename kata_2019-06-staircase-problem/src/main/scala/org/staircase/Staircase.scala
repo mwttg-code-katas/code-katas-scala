@@ -9,7 +9,7 @@ object Staircase {
     (amountOfNumberOne, amountOfNumberTwo) =>
       factorial(amountOfNumberOne + amountOfNumberTwo) / (factorial(amountOfNumberOne) * factorial(amountOfNumberTwo))
 
-  def numWays(steps: Int): Int = {
+  def numWays(stairs: Int): Int = {
     @tailrec
     def helper(amountOfNumberOne: Int, amountOfNumberTwo: Int, accumulator: Int): Int =
       (amountOfNumberOne, amountOfNumberTwo) match {
@@ -19,7 +19,7 @@ object Staircase {
           helper(n + 2, m - 1, accumulator + possibilities)
       }
 
-    helper(steps - (steps / 2 * 2), steps / 2, 0)
+    helper(stairs - (stairs / 2 * 2), stairs / 2, 0)
   }
 
   def numWaysWithWays(steps: Int): (Int, Iterator[List[Int]]) = {
