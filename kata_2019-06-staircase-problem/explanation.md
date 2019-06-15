@@ -7,7 +7,7 @@ I thought:
 * So the formula would be 
   * ![alt text](formula.svg "Formula")
   * n = amount of positions of numbers in the sum-formula
-  * k = amount of 1's in the sum formula
+  * k = amount of 1's in the sum-formula
 * so for each amount of 1's I can get the combinations, which I have to sum up in the end
 
 ![alt text](combination.png "Picture from Wikipedia - Combination")
