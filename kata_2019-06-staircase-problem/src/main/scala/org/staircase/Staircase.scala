@@ -22,7 +22,7 @@ object Staircase {
     helper(stairs - (stairs / 2 * 2), stairs / 2, 0)
   }
 
-  def numWaysWithWays(steps: Int): (Int, Iterator[List[Int]]) = {
+  def numWaysWithWays(stairs: Int): (Int, Iterator[List[Int]]) = {
     @tailrec
     def helper(amountOfNumberOne: Int,
                amountOfNumberTwo: Int,
@@ -39,6 +39,6 @@ object Staircase {
           )
       }
 
-    helper(steps - (steps / 2 * 2), steps / 2, (0, Iterator.empty))
+    helper(stairs - (stairs / 2 * 2), stairs / 2, (0, Iterator.empty))
   }
 }
