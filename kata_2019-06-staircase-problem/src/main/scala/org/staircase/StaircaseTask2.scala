@@ -49,6 +49,10 @@ object StaircaseTask2 {
     helper(allFormulas, (0, List.empty))
   }
 
+  /*
+    After I know how many summands of each summand I need, it's time to create a list with
+    all theses summands, so I can create the permutations of it
+   */
   def createSteps(sortedSummands: List[Int], amountOfSummands: List[Int]): List[Int] = {
     val zip = sortedSummands.zip(amountOfSummands)
     zip.flatMap(item => {
