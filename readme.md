@@ -11,3 +11,4 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2019 | April    | [Word Puzzle](kata_2019-04-word-puzzle/readme.md)             |
 | 2019 | May      | [Landing Rover](kata_2019-05-landing-rover/readme.md)         |
 | 2019 | June     | [Staircase Problem](kata_2019-06-staircase-problem/readme.md) |
+| 2019 | July     | [Sudoku](kata_2019-07-sudoku/readme.md) |
