@@ -4,7 +4,7 @@ import org.game.of.life.generation.GameOfLifeLoop
 import org.game.of.life.init.{ GetBoardSize, InitializeGenerationZero }
 
 object Application {
-  val generation = 100
+  val generation = 150
   val filename   = "glider-2.txt"
 
   def main(args: Array[String]): Unit = {
