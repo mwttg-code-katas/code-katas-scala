@@ -2,21 +2,22 @@ package org.game.of.life
 
 final case class Cell(x: Int, y: Int)
 
-final case class World(livingCells: Set[Cell], generation: Int, size: WorldSize) {
-  import World._
+final case class Population(livingCells: Set[Cell], generation: Int, size: WorldSize) {
 
-  def next(): World = {
+  import Population._
+
+  def next(): Population = {
     val nextGeneration = forEachCell(size, livingCells, nextGenerationFunc)
-    World(nextGeneration, generation + 1, size)
+    Population(nextGeneration, generation + 1, size)
   }
 }
 
-object World {
+object Population {
   private val IsAlive = '*'
 
-  def apply(lines: List[String], worldSize: WorldSize): World = {
+  def apply(lines: List[String], worldSize: WorldSize): Population = {
     val livingCells = forEachCell(worldSize, lines, linesTransformFunc)
-    World(livingCells, 0, worldSize)
+    Population(livingCells, 0, worldSize)
   }
 
   private def forEachCell[T](worldSize: WorldSize, input: T, f: (Int, Int, T) => Option[Cell]) = {

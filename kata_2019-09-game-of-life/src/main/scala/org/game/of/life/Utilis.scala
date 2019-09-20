@@ -22,20 +22,20 @@ object Utils {
     WorldSize(width, height)
   }
 
-  def printWorld(world: World, targetGeneration: Int): Unit = {
-    println(s"\n Generation ${world.generation} of $targetGeneration \n")
+  def printWorld(population: Population, targetGeneration: Int): Unit = {
+    println(s"\n Generation ${population.generation} of $targetGeneration \n")
     Thread.sleep(DelayInMs)
 
-    for (y <- 0 until world.size.height;
-         x <- 0 until world.size.width) {
+    for (y <- 0 until population.size.height;
+         x <- 0 until population.size.width) {
       val currentCell = Cell(x, y)
 
-      if (world.livingCells.contains(currentCell)) {
+      if (population.livingCells.contains(currentCell)) {
         print(Alive)
       } else {
         print(Dead)
       }
-      if (x == world.size.width - 1) {
+      if (x == population.size.width - 1) {
         print("\n")
       }
     }

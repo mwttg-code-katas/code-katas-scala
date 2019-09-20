@@ -18,20 +18,19 @@ object Application {
   private val Filename         = "glider-2.txt"
 
   def main(args: Array[String]): Unit = {
-    val lines     = Utils.readFile(Filename)
-    val worldSize = Utils.getWorldSize(lines)
-    val world     = World(lines, worldSize)
-    loop(TargetGeneration, world, Utils.printWorld)
+    val lines          = Utils.readFile(Filename)
+    val worldSize      = Utils.getWorldSize(lines)
+    val generationZero = Population(lines, worldSize)
+    loop(TargetGeneration, generationZero, Utils.printWorld)
   }
 
   @tailrec
-  def loop(iteration: Int, world: World, printFunc: (World, Int) => Unit): World =
+  def loop(iteration: Int, population: Population, printFunc: (Population, Int) => Unit): Population =
     if (iteration == 0) {
-      printFunc(world, TargetGeneration)
-      world
+      printFunc(population, TargetGeneration)
+      population
     } else {
-      val nextWorld = world.next()
-      printFunc(world, TargetGeneration)
-      loop(iteration - 1, nextWorld, printFunc)
+      printFunc(population, TargetGeneration)
+      loop(iteration - 1, population.next(), printFunc)
     }
 }
