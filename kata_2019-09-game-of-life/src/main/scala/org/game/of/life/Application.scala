@@ -1,16 +1,50 @@
 package org.game.of.life
 
-import org.game.of.life.generation.GameOfLifeLoop
-import org.game.of.life.init.{ GetBoardSize, InitializeGenerationZero }
+import scala.annotation.tailrec
+
+import org.game.of.life.process._
 
 object Application {
-  val generation = 150
-  val filename   = "glider-2.txt"
+  private val TargetGeneration = 120
+  private val Delay            = 50
+  private val Filename         = "glider-2.txt"
+  private val Alive            = '*'
+  private val Dead             = '.'
 
   def main(args: Array[String]): Unit = {
-    val lines          = FileService.read(filename)
-    val boardSize      = GetBoardSize.get(lines)
-    val generationZero = InitializeGenerationZero.init(lines, boardSize)
-    GameOfLifeLoop.loop(generation, generationZero, boardSize)
+    val lines          = Utils.readFile(Filename)
+    val boardSize      = Utils.getBoardSize(lines)
+    val generationZero = Generation.zero(lines, boardSize)
+    loop(TargetGeneration, generationZero, boardSize)
+  }
+
+  @tailrec
+  private def loop(targetGeneration: Int, generation: Set[Cell], boardSize: BoardSize): Set[Cell] =
+    if (targetGeneration == 0) {
+      printGeneration(boardSize, generation, 0)
+      generation
+    } else {
+      val nextGeneration = Generation.next(generation, boardSize: BoardSize)
+      printGeneration(boardSize, generation, targetGeneration)
+      loop(targetGeneration - 1, nextGeneration, boardSize)
+    }
+
+  private def printGeneration(boardSize: BoardSize, livingCells: Set[Cell], targetGeneration: Int): Unit = {
+    println(s"\n Generations left = $targetGeneration \n")
+    Thread.sleep(Delay)
+
+    for (y <- 0 until boardSize.height;
+         x <- 0 until boardSize.width) {
+      val currentCell = Cell(x, y)
+
+      if (livingCells.contains(currentCell)) {
+        print(Alive)
+      } else {
+        print(Dead)
+      }
+      if (x == boardSize.width - 1) {
+        print("\n")
+      }
+    }
   }
 }
