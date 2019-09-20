@@ -1,4 +1,4 @@
-package org.game.of.life.process
+package org.game.of.life
 
 import org.scalatest.{ Matchers, WordSpec }
 
@@ -12,7 +12,7 @@ class UtilsTest extends WordSpec with Matchers {
     }
     "return the dimension of a board" in {
       val input = List(".....", ".....", ".....")
-      Utils.getBoardSize(input) shouldBe BoardSize(5, 3)
+      Utils.getWorldSize(input) shouldBe WorldSize(5, 3)
     }
   }
 }

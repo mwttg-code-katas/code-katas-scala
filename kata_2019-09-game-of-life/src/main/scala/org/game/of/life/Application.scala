@@ -2,63 +2,36 @@ package org.game.of.life
 
 import scala.annotation.tailrec
 
-import org.game.of.life.process._
-
+/**
+  * Interesting files:
+  *  - pentomino.txt    TargetGeneration = 1120
+  *  - glider-2.txt     TargetGeneration = 120
+  *  - symetric.txt     TargetGeneration = 55
+  *
+  * Best visualization on sbt (terminal):
+  *   - sbt
+  *   - project kata_2019-09-game-of-life
+  *   - runMain org.game.of.life.Application
+  */
 object Application {
-
-  /**
-    * Interesting files:
-    *  - pentomino.txt    TargetGeneration = 1120
-    *  - glider-2.txt     TargetGeneration = 120
-    *  - symetric.txt     TargetGeneration = 55
-    *
-    * Best visualization on sbt (terminal):
-    *   - sbt
-    *   - project kata_2019-09-game-of-life
-    *   - runMain org.game.of.life.Application
-    *
-    *
-    */
   private val TargetGeneration = 120
-  private val Delay            = 50
   private val Filename         = "glider-2.txt"
-  private val Alive            = '*'
-  private val Dead             = '.'
 
   def main(args: Array[String]): Unit = {
-    val lines          = Utils.readFile(Filename)
-    val boardSize      = Utils.getBoardSize(lines)
-    val generationZero = Generation.zero(lines, boardSize)
-    loop(TargetGeneration, generationZero, boardSize)
+    val lines     = Utils.readFile(Filename)
+    val worldSize = Utils.getWorldSize(lines)
+    val world     = World(lines, worldSize)
+    loop(TargetGeneration, world, Utils.printWorld)
   }
 
   @tailrec
-  private def loop(targetGeneration: Int, generation: Set[Cell], boardSize: BoardSize): Set[Cell] =
-    if (targetGeneration == 0) {
-      printGeneration(boardSize, generation, 0)
-      generation
+  def loop(iteration: Int, world: World, printFunc: (World, Int) => Unit): World =
+    if (iteration == 0) {
+      printFunc(world, TargetGeneration)
+      world
     } else {
-      val nextGeneration = Generation.next(generation, boardSize: BoardSize)
-      printGeneration(boardSize, generation, targetGeneration)
-      loop(targetGeneration - 1, nextGeneration, boardSize)
+      val nextWorld = world.next()
+      printFunc(world, TargetGeneration)
+      loop(iteration - 1, nextWorld, printFunc)
     }
-
-  private def printGeneration(boardSize: BoardSize, livingCells: Set[Cell], targetGeneration: Int): Unit = {
-    println(s"\n Generations left = $targetGeneration \n")
-    Thread.sleep(Delay)
-
-    for (y <- 0 until boardSize.height;
-         x <- 0 until boardSize.width) {
-      val currentCell = Cell(x, y)
-
-      if (livingCells.contains(currentCell)) {
-        print(Alive)
-      } else {
-        print(Dead)
-      }
-      if (x == boardSize.width - 1) {
-        print("\n")
-      }
-    }
-  }
 }
