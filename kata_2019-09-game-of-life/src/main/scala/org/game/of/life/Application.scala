@@ -5,6 +5,20 @@ import scala.annotation.tailrec
 import org.game.of.life.process._
 
 object Application {
+
+  /**
+    * Interesting files:
+    *  - pentomino.txt    TargetGeneration = 1120
+    *  - glider-2.txt     TargetGeneration = 120
+    *  - symetric.txt     TargetGeneration = 55
+    *
+    * Best visualization on sbt (terminal):
+    *   - sbt
+    *   - project kata_2019-09-game-of-life
+    *   - runMain org.game.of.life.Application
+    *
+    *
+    */
   private val TargetGeneration = 120
   private val Delay            = 50
   private val Filename         = "glider-2.txt"
