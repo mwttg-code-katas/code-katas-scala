@@ -4,9 +4,11 @@ import scala.annotation.tailrec
 
 /**
   * Interesting files:
-  *  - pentomino.txt    TargetGeneration = 1120
-  *  - glider-2.txt     TargetGeneration = 120
-  *  - symetric.txt     TargetGeneration = 55
+  *  - pentomino.txt                    TargetGeneration = 1120
+  *  - glider-2.txt                     TargetGeneration = 120
+  *  - symmetrical.txt                  TargetGeneration = 55
+  *  - heavy-weight-spaceships.txt      TargetGeneration = 1000
+  *  - symmetrical-2.txt                TargetGeneration = 300
   *
   * Best visualization on sbt (terminal):
   *   - sbt
