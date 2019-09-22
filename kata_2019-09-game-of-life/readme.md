@@ -36,5 +36,5 @@ The result should be a output (terminal/File) of the last generation.
 ### Bonus
 Show each generation as animated output (Slide-Show).
 
-##Source
+## Source
 http://codingdojo.org/kata/GameOfLife/
