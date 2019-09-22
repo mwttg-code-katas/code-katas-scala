@@ -8,7 +8,7 @@ import scala.annotation.tailrec
   *  - glider-2.txt                     TargetGeneration = 120
   *  - symmetrical.txt                  TargetGeneration = 55
   *  - heavy-weight-spaceships.txt      TargetGeneration = 1000
-  *  - symmetrical-2.txt                TargetGeneration = 300
+  *  - symmetrical-2.txt                TargetGeneration = 180
   *
   * Best visualization on sbt (terminal):
   *   - sbt
