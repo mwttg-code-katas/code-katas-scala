@@ -45,8 +45,8 @@ class TestSheet extends WordSpec with Matchers {
   }
 
   def checkAnagram(word1: String, word2: String): Boolean = {
-    val lettersInWord1 = word1.toLowerCase.toSeq.groupBy(identity).view.mapValues(x => x.length)
-    val lettersInWord2 = word2.toLowerCase.toSeq.groupBy(identity).view.mapValues(x => x.length)
+    val lettersInWord1 = word1.toLowerCase.toSeq.groupBy(identity).view.mapValues(x => x.length).toMap
+    val lettersInWord2 = word2.toLowerCase.toSeq.groupBy(identity).view.mapValues(x => x.length).toMap
     lettersInWord1 == lettersInWord2
   }
 

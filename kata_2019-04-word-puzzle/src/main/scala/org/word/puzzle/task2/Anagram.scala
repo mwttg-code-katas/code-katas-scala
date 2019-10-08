@@ -2,8 +2,8 @@ package org.word.puzzle.task2
 
 object Anagram {
   def check(first: String, second: String): Boolean = {
-    val letters1 = first.toLowerCase.groupBy(identity).mapValues(x => x.length)
-    val letters2 = second.toLowerCase.groupBy(identity).mapValues(x => x.length)
+    val letters1 = first.toLowerCase.groupBy(identity).view.mapValues(x => x.length).toMap
+    val letters2 = second.toLowerCase.groupBy(identity).view.mapValues(x => x.length).toMap
     letters1 == letters2
   }
 
