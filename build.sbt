@@ -3,9 +3,9 @@ name := "code-katas-scala"
 version := "0.1"
 
 lazy val commonSettings = Seq(
-  scalaVersion := "2.12.8",
-  libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",
-  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+  scalaVersion := "2.13.1",
+  libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.8",
+  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 )
 
 lazy val `kata_2018-12-number-scanner` = (project in file("kata_2018-12-number-scanner"))

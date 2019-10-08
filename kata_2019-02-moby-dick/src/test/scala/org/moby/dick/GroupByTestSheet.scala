@@ -28,7 +28,7 @@ class GroupByTestSheet extends WordSpec with Matchers {
     }
     "#mapValues" in {
       val input  = List("a", "aa", "a", "b", "c")
-      val actual = input.groupBy(identity).mapValues(x => x.size)
+      val actual = input.groupBy(identity).view.mapValues(x => x.size).toMap
 //      println(actual)
       actual shouldBe Map(
         "c" -> 1,

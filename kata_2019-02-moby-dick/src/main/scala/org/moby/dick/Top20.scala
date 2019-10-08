@@ -17,7 +17,7 @@ object Top20 {
 
   def sortTable(table: Map[String, Int]): ListMap[String, Int] = ListMap(table.toSeq.sortWith(_._2 > _._2): _*)
 
-  def createTable(words: List[String]): Map[String, Int] = words.groupBy(identity).mapValues(_.size)
+  def createTable(words: List[String]): Map[String, Int] = words.groupBy(identity).view.mapValues(_.size).toMap
 
   def allWords(lines: List[String]): List[String] =
     lines.flatMap(_.split(pattern).filterNot(word => word == "").map(word => word.toLowerCase).toList)

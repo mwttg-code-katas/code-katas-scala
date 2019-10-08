@@ -13,6 +13,7 @@ object Top21 {
           lines
             .flatMap(_.split(pattern).filterNot(word => word == "").map(word => word.toLowerCase).toList)
             .groupBy(identity)
+            .view
             .mapValues(_.size)
             .toSeq
             .sortWith(_._2 > _._2): _*
