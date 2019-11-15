@@ -5,11 +5,11 @@ There are three species of animals in a magic forest: lions, wolves and goats.
 Wolves can devour goats, and lions can devour wolves and goats. 
 ("The stronger animal eats the weaker one".)  
 As this is a magic forest:
-* a wolve, after having devoured a goat, is transmuted into a lion; 
-* a lion, after having devoured a goat, is transmuted into a wolve; and
-* a lion having devoured a wolve becomes a goat.
+* a wolf, after having devoured a goat, is transmuted into a lion; 
+* a lion, after having devoured a goat, is transmuted into a wolf; and
+* a lion having devoured a wolf becomes a goat.
 
-At the very beginning, ther are 17 goats, 55 wolves and 6 lions in the forest. 
+At the very beginning, there are 17 goats, 55 wolves and 6 lions in the forest. 
 After every meal, there is one animal fewer than before; 
 therefore after some time, there is no devouring possible any more.
 
