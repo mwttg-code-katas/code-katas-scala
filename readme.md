@@ -13,4 +13,5 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2019 | June      | [Staircase Problem](kata_2019-06-staircase-problem/readme.md)       |
 | 2019 | July      | [Sudoku](kata_2019-07-sudoku/readme.md)                             |
 | 2019 | August    | [Prime Number Puzzles](kata_2019-08-prime-number-puzzles/readme.md) |
-| 2019 | September | [Game of Life](kata_2019-09-game-of-life/readme.md)
+| 2019 | September | [Game of Life](kata_2019-09-game-of-life/readme.md)                 |
+| 2019 | November  | [The Magic Forest](kata_2019-11-magic-forest/readme.md)             |
