@@ -1,4 +1,4 @@
-# ToDo
+# Word Chain
 
 ## Task
 Given two words of equal length, write a program that can build a chain of words connecting the first to the second. 
