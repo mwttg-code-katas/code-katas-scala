@@ -29,13 +29,16 @@ object WordProcessor {
   }
 
   private def createTreeLevels(from: String, to: String, usableWords: Set[String]) = {
+    val wordLength = to.length
+
     @tailrec
     def helper(currentNodes: Set[Node], currentLevel: Int, accumulator: Map[Int, Set[Node]]): Map[Int, Set[Node]] =
       if (accumulator(currentLevel).exists(node => node.word == to)) {
         accumulator
       } else {
         val newLevel       = currentLevel + 1
-        val allChildren    = createNextTreeLevel(currentNodes, usableWords)
+        val maxDifference = wordLength - newLevel - 1
+        val allChildren    = createNextTreeLevel(currentNodes, usableWords, to, maxDifference)
         val newAccumulator = accumulator + (newLevel -> allChildren)
         helper(allChildren, newLevel, newAccumulator)
       }
@@ -45,6 +48,6 @@ object WordProcessor {
     helper(rootSet, 0, Map(0 -> rootSet))
   }
 
-  private def createNextTreeLevel(nodes: Set[Node], usableWords: Set[String]) =
-    nodes.flatMap(node => node.createChildren(usableWords))
+  private def createNextTreeLevel(nodes: Set[Node], usableWords: Set[String], to: String, maxDifference: Int) =
+    nodes.flatMap(node => node.createChildren(usableWords, to, maxDifference))
 }
