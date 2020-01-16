@@ -29,8 +29,6 @@ object WordProcessor {
   }
 
   private def createTreeLevels(from: String, to: String, usableWords: Set[String]) = {
-    val wordLength = to.length
-
     @tailrec
     def helper(currentNodes: Set[Node], currentLevel: Int, accumulator: Map[Int, Set[Node]]): Map[Int, Set[Node]] =
       if (accumulator(currentLevel).exists(node => node.word == to)) {
