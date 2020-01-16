@@ -3,15 +3,15 @@ package org.wordchain
 final case class Node(parent: Option[Node], word: String) {
   import Node._
 
-  def createChildren(usableWords: Set[String], to: String, maxDifference: Int): Set[Node] = {
+  def createChildren(usableWords: Set[String], to: String): Set[Node] = {
     val maybeChildren = getAllDiffByOne(this.word, usableWords)
-    val children = compareMaybeChildrenWithTarget(maxDifference, to, maybeChildren)
+    val children = compareMaybeChildrenWithTarget(to, maybeChildren)
     children.map(word => Node(Some(this), word))
   }
 }
 
 object Node {
-  private def compareMaybeChildrenWithTarget(maxDiff: Int, to: String, maybeChildren: Set[String]) = {
+  private def compareMaybeChildrenWithTarget(to: String, maybeChildren: Set[String]) = {
     val diffs = maybeChildren.foldLeft(Map.empty[Int, Set[String]]) {(accumulator, word) => {
       val diff = compareWords(to, word)
       if (accumulator.contains(diff)) {
