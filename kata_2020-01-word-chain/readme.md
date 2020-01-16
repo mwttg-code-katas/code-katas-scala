@@ -16,3 +16,6 @@ If you get your code working, try timing it.
 Does it take less than a second for the above examples? 
 And is the timing the same forwards and backwards? 
 Does your code find the shortest possible valid word chain?
+
+## Source
+https://nwrug.org/quizzes/word-chains-kata
