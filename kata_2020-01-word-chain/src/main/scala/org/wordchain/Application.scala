@@ -2,28 +2,36 @@ package org.wordchain
 
 object Application {
 
+// This Solution doesn't work for each example
+// There is a problem for:
+//   * rust -> java
+//   * rogue -> perth
+// I assume the problem is the optimization (comparing the maybeChildren with the target word
+// to minimize the search space
+
   def main(args: Array[String]): Unit = {
-    val s1 = System.currentTimeMillis()
-    val input = InputReader.read("words.txt")
-    val e1 = System.currentTimeMillis()
-    println(s"getting the input and preparing it took ${e1-s1} ms")
+    val s1    = System.currentTimeMillis()
+    val words = InputReader.read("words.txt")
+    val e1    = System.currentTimeMillis()
+    println(s"getting the input and preparing it took ${e1 - s1} ms")
     println("---------------------")
 
-    val s2 = System.currentTimeMillis()
-    val usableWordsExample1 = input(3).toSet.diff(Set("cat"))
-    println(s"cat -> dog   usableWords: ${usableWordsExample1.size}")
-    val result1 = WordProcessor.getTransition("cat", "dog", usableWordsExample1)
-    val e2 = System.currentTimeMillis()
-    println(result1)
-    println(s"from 'cat' -> 'dog' took ${e2-s2} ms")
-    println("---------------------")
+    calculateChain("cat", "dog", words)
+    calculateChain("duck", "ruby", words)
+    calculateChain("rust", "java", words)
+    calculateChain("rogue", "perth", words)
+  }
 
-    val s3 = System.currentTimeMillis()
-    val usableWordsExample2 = input(4).toSet.diff(Set("duck"))
-    println(s"duck -> ruby   usableWords: ${usableWordsExample2.size}")
-    val result2 = WordProcessor.getTransition("duck", "ruby", usableWordsExample2)
-    val e3 = System.currentTimeMillis()
-    println(result2)
-    println(s"from 'duck' -> 'ruby' took ${e3-s3} ms")
+  private def calculateChain(from: String, to: String, wordsByLength: Map[Int, List[String]]): Unit = {
+    require(from.length == to.length)
+    val start       = System.currentTimeMillis()
+    val length      = from.length
+    val usableWords = wordsByLength(length).toSet.diff(Set(from))
+    println(s"$from -> $to    usable words = ${usableWords.size}")
+    val result = WordProcessor.getTransition(from, to, usableWords)
+    val stop   = System.currentTimeMillis()
+    println(result)
+    println(s"from $from -> $to took ${stop - start} ms.")
+    println("---------------------")
   }
 }
