@@ -13,6 +13,7 @@ object Application {
     calculateChain("duck", "ruby", words)
     calculateChain("rust", "java", words)
     calculateChain("rogue", "peach", words)
+    calculateChain("null", "funk", words)
   }
 
   private def calculateChain(from: String, to: String, wordsByLength: Map[Int, List[String]]): Unit = {
