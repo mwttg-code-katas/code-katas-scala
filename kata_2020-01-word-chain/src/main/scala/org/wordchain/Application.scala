@@ -2,13 +2,6 @@ package org.wordchain
 
 object Application {
 
-// This Solution doesn't work for each example
-// There is a problem for:
-//   * rust -> java
-//   * rogue -> perth
-// I assume the problem is the optimization (comparing the maybeChildren with the target word
-// to minimize the search space
-
   def main(args: Array[String]): Unit = {
     val s1    = System.currentTimeMillis()
     val words = InputReader.read("words.txt")
@@ -19,7 +12,7 @@ object Application {
     calculateChain("cat", "dog", words)
     calculateChain("duck", "ruby", words)
     calculateChain("rust", "java", words)
-    calculateChain("rogue", "perth", words)
+    calculateChain("rogue", "peach", words)
   }
 
   private def calculateChain(from: String, to: String, wordsByLength: Map[Int, List[String]]): Unit = {

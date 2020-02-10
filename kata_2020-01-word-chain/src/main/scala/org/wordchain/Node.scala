@@ -3,10 +3,11 @@ package org.wordchain
 final case class Node(parent: Option[Node], word: String) {
   import Node._
 
-  def createChildren(usableWords: Set[String], to: String): Set[Node] = {
+  def createChildren(usableWords: Set[String], to: String, alreadySeenWords: AlreadySeenWords): Set[Node] = {
     val maybeChildren = getAllDiffByOne(this.word, usableWords)
     val children = compareMaybeChildrenWithTarget(to, maybeChildren)
-    children.map(word => Node(Some(this), word))
+    val wordsForCheck = children.diff(alreadySeenWords.getWords)
+    wordsForCheck.map(word => Node(Some(this), word))
   }
 }
 
@@ -24,14 +25,15 @@ object Node {
     }}
 
     val minDiff = diffs.keySet.min
-    diffs(minDiff)
+    val moreWords = if (diffs.contains(minDiff + 1)) diffs(minDiff + 1) else Set.empty[String]
+    diffs(minDiff).union(moreWords)
   }
 
   private def getAllDiffByOne(word: String, usableWords: Set[String]) =
     usableWords.filter(filterWord => compareWords(word, filterWord) == 1)
 
   private def compareWords(word: String, otherWord: String) = {
-    val difference = word
+    word
       .zip(otherWord)
       .map(
         tuple =>
@@ -40,7 +42,6 @@ object Node {
           } else {
             1
         }
-      )
-    difference.sum
+      ).sum
   }
 }

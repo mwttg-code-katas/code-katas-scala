@@ -30,21 +30,23 @@ object WordProcessor {
 
   private def createTreeLevels(from: String, to: String, usableWords: Set[String]) = {
     @tailrec
-    def helper(currentNodes: Set[Node], currentLevel: Int, accumulator: Map[Int, Set[Node]]): Map[Int, Set[Node]] =
+    def helper(currentNodes: Set[Node], currentLevel: Int, alreadySeenWords: AlreadySeenWords, accumulator: Map[Int, Set[Node]]): Map[Int, Set[Node]] =
       if (accumulator(currentLevel).exists(node => node.word == to)) {
         accumulator
       } else {
         val newLevel       = currentLevel + 1
-        val allChildren    = createNextTreeLevel(currentNodes, usableWords, to)
+        val allChildren    = createNextTreeLevel(currentNodes, usableWords, to, alreadySeenWords)
+        val words = allChildren.map(item => item.word)
+        val seenWords = alreadySeenWords.add(words)
         val newAccumulator = accumulator + (newLevel -> allChildren)
-        helper(allChildren, newLevel, newAccumulator)
+        helper(allChildren, newLevel, seenWords, newAccumulator)
       }
 
     val root    = Node(None, from)
     val rootSet = Set(root)
-    helper(rootSet, 0, Map(0 -> rootSet))
+    helper(rootSet, 0, AlreadySeenWords(), Map(0 -> rootSet))
   }
 
-  private def createNextTreeLevel(nodes: Set[Node], usableWords: Set[String], to: String) =
-    nodes.flatMap(node => node.createChildren(usableWords, to))
+  private def createNextTreeLevel(nodes: Set[Node], usableWords: Set[String], to: String, alreadySeenWords: AlreadySeenWords) =
+    nodes.flatMap(node => node.createChildren(usableWords, to, alreadySeenWords))
 }
