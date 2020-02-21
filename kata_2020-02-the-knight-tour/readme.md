@@ -11,6 +11,10 @@ Implement an algorithm that gets as input:
 and produces as output:
 * a list of positions (the way the knight took)
 
+## Bonus
+* How many different tours can a knight take on a N x N chessboard, for a certain startPosition?
+* Does a tour exists which ends in a loop (startPosition = endPosition)
+
 ## Hints
 
 ### Possible Solutions for a 5x5 chessboard
