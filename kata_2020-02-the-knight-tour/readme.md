@@ -36,4 +36,7 @@ and produces as output:
 * http://aperiodic.net/phil/scala/s-99/p91.scala
 
 ## Links
-* https://stackoverflow.com/questions/31411487/knights-tour-on-a-5-x-5-board-start-from-any-square
+* [A link](http://www.cs.nott.ac.uk/~pszgxk/papers/cec05knights.pdf)
+* http://gaebler.us/share/Knight_tour.html
+* https://www.cma.fct.unl.pt/sites/www.cma.fct.unl.pt/files/knights_tours_final.pdf
+* https://www.mayhematics.com/p/figuredtours.pdf
