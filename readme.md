@@ -15,4 +15,5 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2019 | August    | [Prime Number Puzzles](kata_2019-08-prime-number-puzzles/readme.md) |
 | 2019 | September | [Game of Life](kata_2019-09-game-of-life/readme.md)                 |
 | 2019 | November  | [The Magic Forest](kata_2019-11-magic-forest/readme.md)             |
-| 2020 | January   | [Word Chain](kata_2020-01-word-chain/readme.md)             |
+| 2020 | January   | [Word Chain](kata_2020-01-word-chain/readme.md)                     |
+| 2020 | February  | [The Knight's tour](kata_2020-02-the-knight-tour/readme.md)         |
