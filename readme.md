@@ -17,3 +17,5 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2019 | November  | [The Magic Forest](kata_2019-11-magic-forest/readme.md)             |
 | 2020 | January   | [Word Chain](kata_2020-01-word-chain/readme.md)                     |
 | 2020 | February  | [The Knight's tour](kata_2020-02-the-knight-tour/readme.md)         |
+| 2020 | March     | [Roman Numerals](kata_2020-03-roman-numerals/readme.md)         |
+
