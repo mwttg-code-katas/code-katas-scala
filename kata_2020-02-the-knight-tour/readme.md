@@ -40,3 +40,7 @@ and produces as output:
 * http://gaebler.us/share/Knight_tour.html
 * https://www.cma.fct.unl.pt/sites/www.cma.fct.unl.pt/files/knights_tours_final.pdf
 * https://www.mayhematics.com/p/figuredtours.pdf
+
+## Additional nodes
+
+This problem gets very quick, very difficult, so for beginning a 5x5 chess board is sufficient.
