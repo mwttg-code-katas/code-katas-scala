@@ -28,5 +28,16 @@ Example:
 VII --> 7
 ```
 
+## More Examples
+| number |  roman   |
+|:-------|:---------|  
+|4	     |IV        |
+|8	     |VIII      |
+|24	     |XXIV      |
+|31	     |XXXI      |
+|369     |CCCLXIX   |
+|448     |CDXLVIII  |
+|1995    |MCMXCV    |
+
 ## Source
 http://codingdojo.org/kata/RomanNumerals/
