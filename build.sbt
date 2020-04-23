@@ -49,3 +49,6 @@ lazy val `kata_2020-02-the-knight-tour` = (project in file("kata_2020-02-the-kni
 
 lazy val `kata_2020-03-roman-numerals` = (project in file("kata_2020-03-roman-numerals"))
   .settings(commonSettings)
+
+lazy val `kata_2020-04-i-before-e-except-after-c` = (project in file("kata_2020-04-i-before-e-except-after-c"))
+  .settings(commonSettings)
