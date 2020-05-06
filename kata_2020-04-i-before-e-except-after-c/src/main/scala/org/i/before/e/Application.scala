@@ -5,5 +5,9 @@ object Application {
     val words = Utilities.readFile("words.txt")
     val amounts = WordFilter.filter(words)
     amounts.prettyPrint()
+
+    val wordsWithFreq = Utilities.readFileWithFrequencies("words-with-frequencies.txt")
+    val amountsWithFreq = WordFilterWithFrequencies.filter(wordsWithFreq)
+    amountsWithFreq.prettyPrint()
   }
 }
