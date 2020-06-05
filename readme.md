@@ -19,3 +19,4 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2020 | February  | [The Knight's tour](kata_2020-02-the-knight-tour/readme.md)                   |
 | 2020 | March     | [Roman Numerals](kata_2020-03-roman-numerals/readme.md)                       |
 | 2020 | April     | [I before E except after C](kata_2020-04-i-before-e-except-after-c/readme.md) |
+| 2020 | May       | [ABC Blocks](kata_2020-05-abc-blocks/readme.md) |
