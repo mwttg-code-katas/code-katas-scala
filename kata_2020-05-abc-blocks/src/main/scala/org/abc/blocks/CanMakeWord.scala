@@ -4,6 +4,14 @@ import scala.annotation.tailrec
 
 object CanMakeWord {
 
+  /**
+   * A Problem:
+   * There are two blocks with the same letter, it may happen, when taking the first block
+   * the solution isn't possible anymore
+   *
+   *  --> permutation of all possible ordering of blocks?
+   */
+
   def canMakeWord(word: String, blocks: List[Block]): Boolean = {
     @tailrec
     def helper(remainingLetters: Array[Char], remainingBlocks: List[Block], accumulator: Boolean): Boolean =
