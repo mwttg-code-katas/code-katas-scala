@@ -46,3 +46,8 @@ Nine is four, four is magic.
 * You are encouraged, though not mandated to use proper sentence capitalization.
 * You may optionally support negative numbers. -7 is negative seven.
 
+# Source
+http://rosettacode.org/wiki/Four_is_magic
+
+# Links
+Algorithm: http://blackwasp.co.uk/NumberToWords.aspx
