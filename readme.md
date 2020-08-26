@@ -16,7 +16,7 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2019 | September | [Game of Life](kata_2019-09-game-of-life/readme.md)                           |
 | 2019 | November  | [The Magic Forest](kata_2019-11-magic-forest/readme.md)                       |
 | 2020 | January   | [Word Chain](kata_2020-01-word-chain/readme.md)                               |
-| 2020 | February  | [The Knight's tour](kata_2020-02-the-knight-tour/readme.md)                   |
+| 2020 | February  | [The Knight's Tour](kata_2020-02-the-knight-tour/readme.md)                   |
 | 2020 | March     | [Roman Numerals](kata_2020-03-roman-numerals/readme.md)                       |
 | 2020 | April     | [I before E except after C](kata_2020-04-i-before-e-except-after-c/readme.md) |
 | 2020 | May       | [ABC Blocks](kata_2020-05-abc-blocks/readme.md)                               |
