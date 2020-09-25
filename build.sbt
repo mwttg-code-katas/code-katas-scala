@@ -64,3 +64,6 @@ lazy val `kata_2020-07-marble-maze` = (project in file("kata_2020-07-marble-maze
 
 lazy val `kata_2020-08-rabbit-hunt` = (project in file("kata_2020-08-rabbit-hunt"))
   .settings(commonSettings)
+
+lazy val `kata_2020-09-game-of-pig` = (project in file("kata_2020-09-game-of-pig"))
+  .settings(commonSettings)
