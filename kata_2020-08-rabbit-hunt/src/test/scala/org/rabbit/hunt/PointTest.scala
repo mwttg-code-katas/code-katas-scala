@@ -1,6 +1,8 @@
 package org.rabbit.hunt
 
-import org.scalatest.{ Matchers, WordSpec }
+import org.scalatest.{Matchers, WordSpec}
+
+import scala.util.Success
 
 class PointTest extends WordSpec with Matchers {
 

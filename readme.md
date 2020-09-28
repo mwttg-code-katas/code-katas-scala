@@ -22,4 +22,5 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2020 | May       | [ABC Blocks](kata_2020-05-abc-blocks/readme.md)                               |
 | 2020 | June      | [Four is Magic](kata_2020-06-four-is-magic/readme.md)                         |
 | 2020 | July      | [Marble Maze](kata_2020-07-marble-maze/readme.md)                             |
-| 2020 | August    | [Rabbit Hunt](kata_2020-08-rabbit-hunt/readme.md)
+| 2020 | August    | [Rabbit Hunt](kata_2020-08-rabbit-hunt/readme.md)                             |
+| 2020 | September | [Game of Pig](kata_2020-09-game-of-pig/readme.md)                             |
