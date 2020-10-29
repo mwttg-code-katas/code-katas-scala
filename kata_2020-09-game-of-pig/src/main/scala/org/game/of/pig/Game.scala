@@ -11,7 +11,7 @@ object Game {
   def mainLoop(players: (Player, Player), maxScore: Int): List[String] = {
     @tailrec
     def helper(players: (Player, Player), log: List[String]): List[String] = {
-      if (players._2.score > maxScore) {
+      if (players._2.score >= maxScore) {
         val newLog = log :+
           s"!!Game Over!! - ${players._2.name} wins with ${players._2.score} points" :+
           s"  ${players._1.name} has ${players._1.score} points"
