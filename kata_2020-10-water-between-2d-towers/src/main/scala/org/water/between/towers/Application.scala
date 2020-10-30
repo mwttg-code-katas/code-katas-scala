@@ -13,7 +13,7 @@ object Application {
       List(6, 7, 10, 7, 6)
     )
     worlds
-      .map(towers => Water.calculate2(towers))
+      .map(towers => Water.getAmount(towers))
       .foreach(water => println(water))
   }
 }
