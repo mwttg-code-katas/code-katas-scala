@@ -6,13 +6,13 @@ object Water {
 
   def getAmount(towers: List[Int]): Int = {
     @tailrec
-    def helper(remaining: List[Int], index: Int, accumulator: Int): Int = {
-      if (remaining.isEmpty) {
+    def helper(index: Int, accumulator: Int): Int = {
+      if (index == towers.size - 1) {
         return accumulator
       }
 
       if (index < 1) {
-        helper(remaining.tail, index + 1, accumulator)
+        helper(index + 1, accumulator)  // no calculation for the first tower
       } else {
         val (before, behindTemp) = towers.splitAt(index)
         val behind               = behindTemp.tail
@@ -24,10 +24,10 @@ object Water {
         val water          = Math.min(maxBefore, maxBehind) - currentTower
         val newAccumulator = if (water > 0) water + accumulator else accumulator
 
-        helper(remaining.tail, index + 1, newAccumulator)
+        helper(index + 1, newAccumulator)
       }
     }
 
-    helper(towers, 0, 0)
+    helper(0, 0)
   }
 }
