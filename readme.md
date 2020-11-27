@@ -25,3 +25,4 @@ This repository is a collection of some code-katas solved with Scala. The collec
 | 2020 | August    | [Rabbit Hunt](kata_2020-08-rabbit-hunt/readme.md)                             |
 | 2020 | September | [Game of Pig](kata_2020-09-game-of-pig/readme.md)                             |
 | 2020 | October   | [Water between 2D Tower](kata_2020-10-water-between-2d-towers/readme.md)      |
+| 2020 | Novemeber | [Stones and Jewels](kata_2020-11-stones-and-jewels/readme.md)                 |
