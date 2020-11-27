@@ -70,3 +70,6 @@ lazy val `kata_2020-09-game-of-pig` = (project in file("kata_2020-09-game-of-pig
 
 lazy val `kata_2020-10-water-between-2d-towers` = (project in file("kata_2020-10-water-between-2d-towers"))
   .settings(commonSettings)
+
+lazy val `kata_2020-11-stones-and-jewels` = (project in file("kata_2020-11-stones-and-jewels"))
+  .settings(commonSettings)
